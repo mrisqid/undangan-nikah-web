@@ -34,7 +34,7 @@ const crimsonPro = Crimson_Pro({
   variable: '--font-crimson-pro',
 })
 
-import { useCountdown } from './hooks'
+import { useCountdown } from '../hooks'
 
 export default function Content() {
   const targetDate = new Date("31 december 2022 10:00:00");
