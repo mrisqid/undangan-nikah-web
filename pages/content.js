@@ -571,14 +571,14 @@ export default function Content() {
             <a
               href="https://wa.me/6285235364181?text=Halo%20Risqi,%20saya%20akan%20datang%20di%20acara%20pernikahan"
               target="_blank"
-              className={`py-2 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center`}
+              className={`py-2 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center cursor-pointer`}
             >
               <FontAwesomeIcon icon={faPhone} className='mr-2' />
               {section5Data.text6}
             </a>
             <a
               onClick={() => setShowModal(true)}
-              className={`py-2 px-4 rounded-lg bg-sky-900 hover:bg-sky-700 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center`}
+              className={`py-2 px-4 rounded-lg bg-sky-900 hover:bg-sky-700 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center cursor-pointer`}
             >
               <FontAwesomeIcon icon={faGift} className='mr-2' />
               {section5Data.text7}
@@ -691,7 +691,7 @@ export default function Content() {
                       <div className='mt-2'>
                         <button
                           onClick={handleClickCopy1}
-                          className='text-sm w-35 text-white bg-sky-900 hover:bg-sky-700 rounded px-2 py-1 transition'
+                          className='text-sm w-35 text-white bg-sky-900 hover:bg-sky-700 rounded px-2 py-1 transition cursor-pointer'
                         >
                           <FontAwesomeIcon icon={faCopy} className="mr-2" />
                           {copied1 ? 'Berhasil disalin!' : 'Salin No. Rekening'}
@@ -717,7 +717,7 @@ export default function Content() {
                       <div className='mt-2'>
                         <button
                           onClick={handleClickCopy2}
-                          className='text-sm w-35 text-white bg-sky-900 hover:bg-sky-700 rounded px-2 py-1 transition'
+                          className='text-sm w-35 text-white bg-sky-900 hover:bg-sky-700 rounded px-2 py-1 transition cursor-pointer'
                         >
                           <FontAwesomeIcon icon={faCopy} className="mr-2" />
                           {copied2 ? 'Berhasil disalin!' : 'Salin No. Rekening'}
