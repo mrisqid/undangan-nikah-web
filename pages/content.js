@@ -18,6 +18,9 @@ import {
   faBookOpen,
   faVolumeMute,
   faVolumeUp,
+  faGift,
+  faClose,
+  faCopy,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faClock,
@@ -46,7 +49,11 @@ export default function Content() {
   const [section5Data, setSection5Data] = useState({})
   const [section6Data, setSection6Data] = useState({})
 
+  const [showModal, setShowModal] = useState(false)
   const [playAudio, setPlayAudio] = useState(false)
+
+  const [copied1, setCopied1] = useState(false)
+  const [copied2, setCopied2] = useState(false)
 
   useEffect(() => {
     setSection1Data({
@@ -98,6 +105,7 @@ export default function Content() {
       text4: "Jika tidak memungkinkan untuk hadir di pernikahan kami, tidak mengapa, semoga bisa berjumpa di lain kesempatan",
       text5: "Stay safe & jaga kesehatan ya :)",
       text6: "Hubungi Risqi",
+      text7: "Kirim Hadiah",
     })
     setSection6Data({
       text1: "Penutup dari Kami",
@@ -125,6 +133,17 @@ export default function Content() {
     }
     setPlayAudio(!playAudio)
   }
+
+  const handleClickCopy1 = () => {
+    navigator.clipboard.writeText("061801001101531");
+    setCopied1(true);
+    setTimeout(() => setCopied1(false), 500)
+  };
+  const handleClickCopy2 = () => {
+    navigator.clipboard.writeText("221301008863500");
+    setCopied2(true);
+    setTimeout(() => setCopied2(false), 500)
+  };
 
   return (
     <div className="container max-w-screen-sm relative">
@@ -548,14 +567,21 @@ export default function Content() {
           <p className={`${crimsonPro.variable} font-serif text-sm text-indigo-900 mt-2`}>
             {section5Data.text5}
           </p>
-          <div className='mt-6'>
+          <div className='mt-6 flex flex-row items-center justify-center gap-x-4'>
             <a
               href="https://wa.me/6285235364181?text=Halo%20Risqi,%20saya%20akan%20datang%20di%20acara%20pernikahan"
               target="_blank"
-              className={`py-2 px-4 rounded-lg bg-emerald-600 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center`}
+              className={`py-2 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center`}
             >
               <FontAwesomeIcon icon={faPhone} className='mr-2' />
               {section5Data.text6}
+            </a>
+            <a
+              onClick={() => setShowModal(true)}
+              className={`py-2 px-4 rounded-lg bg-sky-900 hover:bg-sky-700 text-white font-bold text-base ${crimsonPro.variable} font-serif flex items-center`}
+            >
+              <FontAwesomeIcon icon={faGift} className='mr-2' />
+              {section5Data.text7}
             </a>
           </div>
         </div>
@@ -620,6 +646,91 @@ export default function Content() {
           </p>
         </div>
       </section>
+      {
+        showModal && (
+          <>
+            <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="relative w-auto my-6 mx-auto max-w-xl">
+                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                  <div className="flex items-center justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
+                    <div className='flex flex-row items-center'>
+                      <FontAwesomeIcon icon={faGift} className='mr-2' />
+                      <h3 className={`${dancingScript.variable} font-sans text-2xl font-bold text-black`}>
+                        Kirim Hadiah
+                      </h3>
+                    </div>
+                    <button
+                      className="bg-transparent border-0 text-white float-right"
+                      onClick={() => setShowModal(false)}
+                    >
+                      <span className="text-white opacity-7 h-6 w-6 text-xl bg-sky-900 hover:bg-sky-700 py-0 flex items-center justify-center rounded-full">
+                        <FontAwesomeIcon icon={faClose} />
+                      </span>
+                    </button>
+                  </div>
+                  <div className='px-6 py-2 text-center'>
+                    <p className={`${crimsonPro.variable} font-serif text-sm text-black`}>
+                      Kehadiran dan doa restu dari Bapak/Ibu/saudara/i merupakan karunia yang sangat berarti bagi kami, namun apabila memberikan hadiah adalah ungkapan tanda kasih silahkan bisa mengirimkan melalui informasi berikut ini. Terimakasih, Jazakumullahu Khairan.
+                    </p>
+                  </div>
+                  <div className="relative px-6 flex-auto">
+                    <div className='bg-gray-100 rounded px-6 py-4 w-full shadow-md flex flex-col items-center text-center'>
+                      <Image
+                        src="/assets/logo-bank.png"
+                        alt="bank-bri"
+                        width={80}
+                        height={40}
+                      />
+                      <div className='mt-4'>
+                        <p className={`${crimsonPro.variable} font-serif text-sm text-black font-bold`}>
+                          a.n Muhammad Risqi Darmawan
+                          <br />
+                          061801001101531
+                        </p>
+                      </div>
+                      <div className='mt-2'>
+                        <button
+                          onClick={handleClickCopy1}
+                          className='text-sm w-35 text-white bg-sky-900 hover:bg-sky-700 rounded px-2 py-1 transition'
+                        >
+                          <FontAwesomeIcon icon={faCopy} className="mr-2" />
+                          {copied1 ? 'Berhasil disalin!' : 'Salin No. Rekening'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative p-6 flex-auto">
+                    <div className='bg-gray-100 rounded px-6 py-4 w-full shadow-md flex flex-col items-center text-center'>
+                      <Image
+                        src="/assets/logo-bank.png"
+                        alt="bank-bri"
+                        width={80}
+                        height={40}
+                      />
+                      <div className='mt-4'>
+                        <p className={`${crimsonPro.variable} font-serif text-sm text-black font-bold`}>
+                          a.n Muslimah
+                          <br />
+                          221301008863500
+                        </p>
+                      </div>
+                      <div className='mt-2'>
+                        <button
+                          onClick={handleClickCopy2}
+                          className='text-sm w-35 text-white bg-sky-900 hover:bg-sky-700 rounded px-2 py-1 transition'
+                        >
+                          <FontAwesomeIcon icon={faCopy} className="mr-2" />
+                          {copied2 ? 'Berhasil disalin!' : 'Salin No. Rekening'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )
+      }
     </div>
   )
 }
