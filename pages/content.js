@@ -40,7 +40,7 @@ const crimsonPro = Crimson_Pro({
 import { useCountdown } from '../hooks'
 
 export default function Content() {
-  const targetDate = new Date("31 december 2022 10:00:00");
+  const targetDate = new Date("12 january 2023 10:00:00");
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
   const [section1Data, setSection1Data] = useState({})
   const [section2Data, setSection2Data] = useState({})
@@ -57,15 +57,15 @@ export default function Content() {
 
   useEffect(() => {
     setSection1Data({
-      text1: "WALIMATUL 'URS",
+      text1: "NGUNDUH MANTU",
       text2: 'Risqi & Muslimah',
       text3: 'Save The Date',
-      text4: '31 . 12 . 2022',
+      text4: '12 . 01 . 2023',
       text5: 'Swipe Up',
     })
     setSection2Data({
       text1: "Ássalamu'alaikum warahmatullahi wabarakatuh",
-      text2: "Dengan memohon rahmat & ridho Allah subhanahu wa ta'ala, Insyaa Allah kami akan menyelenggarakan acara pernikahan:",
+      text2: "Dengan memohon rahmat & ridho Allah subhanahu wa ta'ala, Insyaa Allah kami akan menyelenggarakan acara Ngunduh Mantu:",
       text3: 'Muhammad Risqi Darmawan',
       text4: 'Putra pertama dari Bapak Tri Raharjo',
       text5: 'dan Ibu Arni Cahaya Utami',
@@ -75,13 +75,13 @@ export default function Content() {
     })
     setSection3Data({
       text1: "Yang Insya Allah akan diselenggarakan pada:",
-      text2: "Akad & Resepsi Nikah",
-      text3: "Sabtu",
-      text4: "31 Desember",
-      text5: "2022",
+      text2: "Resepsi Nikah / Ngunduh Mantu",
+      text3: "Kamis",
+      text4: "12 Januari",
+      text5: "2023",
       text6: "Pukul 10:00 WIB s/d selesai",
-      text7: "Kediaman Mempelai Wanita",
-      text8: "Jalan Lombok No. 4 Ujung Gading, Kec. Lembah Melintang, Kab. Pasaman Barat",
+      text7: "Kediaman Mempelai Laki-laki",
+      text8: "Perumahan Taman Imperium Blok I1 No 2 Poros, Kec. Meral, Kab. Karimun, Prov. Kepulauan Riau",
       text9: "Lihat Google Maps",
       text10: "Hitung Mundur Menuju Hari Bahagia",
     })
@@ -389,7 +389,7 @@ export default function Content() {
             </div>
             <div className='mt-4 animate-bounce'>
               <a
-                href="https://goo.gl/maps/wp1uigu2BPj4nfLw9"
+                href="https://maps.app.goo.gl/UE5SiBTyXj8pJbWk8"
                 target='_blank'
                 className={`bg-sky-900 rounded-md w-20 py-2 px-4 text-white ${crimsonPro.variable} font-serif font-bold text-base`}
               >
