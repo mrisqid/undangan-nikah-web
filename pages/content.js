@@ -40,7 +40,7 @@ const crimsonPro = Crimson_Pro({
 import { useCountdown } from '../hooks'
 
 export default function Content() {
-  const targetDate = new Date("12 january 2023 10:00:00");
+  const targetDate = new Date("12 january 2023 11:00:00");
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
   const [section1Data, setSection1Data] = useState({})
   const [section2Data, setSection2Data] = useState({})
@@ -79,7 +79,7 @@ export default function Content() {
       text3: "Kamis",
       text4: "12 Januari",
       text5: "2023",
-      text6: "Pukul 10:00 WIB s/d selesai",
+      text6: "Pukul 11:00 WIB s/d selesai",
       text7: "Kediaman Mempelai Laki-laki",
       text8: "Perumahan Taman Imperium Blok I1 No 2 Poros, Kec. Meral, Kab. Karimun, Prov. Kepulauan Riau",
       text9: "Lihat Google Maps",
